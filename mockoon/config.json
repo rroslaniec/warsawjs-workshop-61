@@ -1,0 +1,164 @@
+{
+  "source": "mockoon:1.17.0",
+  "data": [
+    {
+      "type": "environment",
+      "item": {
+        "uuid": "1fea98e7-5d5e-4c87-86cc-ab9702d84dbc",
+        "lastMigration": 19,
+        "name": "Articles API",
+        "endpointPrefix": "api/",
+        "latency": 0,
+        "port": 3000,
+        "hostname": "0.0.0.0",
+        "routes": [
+          {
+            "uuid": "7b303f46-cff4-409f-865a-d200354a05bb",
+            "documentation": "",
+            "method": "get",
+            "endpoint": "articles",
+            "responses": [
+              {
+                "uuid": "616d00bb-9b3c-441b-9a3b-7018183d69b9",
+                "body": "[\n  {{# repeat 10 }}\n    {\n      \"id\": \"article-{{ @index }}\",\n      \"title\": \"{{ faker 'hacker.phrase' }}\",\n      \"lead\": \"{{ lorem (int 10 100) }}\",\n      \"photo\": \"https://picsum.photos/20{{ @index }}\"\n    }\n  {{/ repeat }}\n]",
+                "latency": 0,
+                "statusCode": 200,
+                "label": "",
+                "headers": [
+                  {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET, OPTIONS"
+                  }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false,
+                "rules": [],
+                "rulesOperator": "OR",
+                "disableTemplating": false,
+                "fallbackTo404": false
+              }
+            ],
+            "enabled": true,
+            "randomResponse": false,
+            "sequentialResponse": false
+          },
+          {
+            "uuid": "460705d4-b0f9-4edf-b6c5-36cac6ad34e9",
+            "documentation": "",
+            "method": "get",
+            "endpoint": "articles/:articleId",
+            "responses": [
+              {
+                "uuid": "2e014247-0b2a-438d-9fcf-a38e51fddfa9",
+                "body": "{\n  \"id\": \"{{urlParam 'articleId'}}\",\n  \"title\": \"{{ faker 'hacker.phrase' }}\",\n  \"photo\": \"{{ faker 'random.image' }}\",\n  \"body\":  \"{{ faker 'random.words' 1000 }}\",\n  \"likes\": {{ int 20 200 }},\n  \"author\": {\n          \"name\": \"{{faker 'name.firstName'}} {{faker 'name.lastName'}}\",\n          \"avatar\": \"{{faker 'image.image' 200 200 false}}\"\n        }\n}",
+                "latency": 0,
+                "statusCode": 200,
+                "label": "",
+                "headers": [
+                  {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET, OPTIONS"
+                  }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false,
+                "rules": [],
+                "rulesOperator": "OR",
+                "disableTemplating": false,
+                "fallbackTo404": false
+              }
+            ],
+            "enabled": true,
+            "randomResponse": false,
+            "sequentialResponse": false
+          },
+          {
+            "uuid": "5073f242-e18d-4ff5-8f4c-43c2442eb966",
+            "documentation": "",
+            "method": "get",
+            "endpoint": "articles/:articleId/comments",
+            "responses": [
+              {
+                "uuid": "1f88ff22-b624-4301-9ab1-1b6c966f6641",
+                "body": "[\n    {{# repeat (int 2 30) }}\n    {\n      \"id\": \"{{ faker 'random.uuid' }}\",\n      \"content\": \"{{ lorem (int 20 100)}}\",\n      \"author\": \"{{faker 'name.firstName'}} {{faker 'name.lastName'}}\"\n    }\n  {{/ repeat }}\n]",
+                "latency": 0,
+                "statusCode": 200,
+                "label": "",
+                "headers": [
+                  {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                  },
+                  {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET, OPTIONS"
+                  }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false,
+                "rules": [],
+                "rulesOperator": "OR",
+                "disableTemplating": false,
+                "fallbackTo404": false
+              }
+            ],
+            "enabled": true,
+            "randomResponse": false,
+            "sequentialResponse": false
+          }
+        ],
+        "proxyMode": false,
+        "proxyHost": "",
+        "proxyRemovePrefix": false,
+        "tlsOptions": {
+          "enabled": false,
+          "type": "CERT",
+          "pfxPath": "",
+          "certPath": "",
+          "keyPath": "",
+          "caPath": "",
+          "passphrase": ""
+        },
+        "cors": true,
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "proxyReqHeaders": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "proxyResHeaders": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      }
+    }
+  ]
+}
