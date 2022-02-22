@@ -32,14 +32,12 @@ Zanim uruchomimy aplikację należy zainstalować wymagane narzędzia:
 
 ## Instalacja
 
-`npm install`
-
-[Importujemy konfigurację aplikacji Mockoon](https://mockoon.com/docs/latest/mockoon-data-files/import-export-openapi-format/) z pliku `./mockoon/config.json`.
+1. `npm install`
+2. [Importujemy konfigurację aplikacji Mockoon](https://mockoon.com/docs/latest/mockoon-data-files/import-export-openapi-format/) z pliku `./mockoon/config.json`.
 
 ## Uruchomienie projektu
 
-Przed uruchomieniem projektu należy postawić serwer dostarczający dane do aplikacji. W tym celu musimy [uruchomić serwer Mockoon](https://mockoon.com/docs/latest/gui-cheat-sheet/) klikając ikonę ▶️.
-
-`npm run start`
+1. Przed uruchomieniem projektu należy postawić serwer dostarczający dane do aplikacji. W tym celu musimy [uruchomić serwer Mockoon](https://mockoon.com/docs/latest/gui-cheat-sheet/) klikając ikonę ▶️.
+2. `npm run start`
 
 
