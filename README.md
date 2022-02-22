@@ -37,7 +37,8 @@ Zanim uruchomimy aplikację należy zainstalować wymagane narzędzia:
 
 ## Uruchomienie projektu
 
-1. Przed uruchomieniem projektu należy postawić serwer dostarczający dane do aplikacji. W tym celu musimy [uruchomić serwer Mockoon](https://mockoon.com/docs/latest/gui-cheat-sheet/) klikając ikonę ▶️.
-2. `npm run start`
+1. Przed uruchomieniem projektu należy postawić serwer dostarczający dane do aplikacji. W tym celu musimy [uruchomić serwer Mockoon](https://mockoon.com/docs/latest/gui-cheat-sheet/) klikając ikonę ▶️. Ważne by aplikacja i serwer działały w jednej sieci (w celu testowania wersji mobilnej).
+2. Jeśli chcemy przetestować aplikację na telefonie to w pliku `app.json` znajduje się adres serwera do którego aplikacja będzie nawiązywać połączenie. W ramach sieci wi-fi należy poznać [lokalny adres IP](https://www.whatismybrowser.com/detect/what-is-my-local-ip-address) i zamienić `localhost` na odpowiedni adres IP.
+3. `npm run start`
 
 
